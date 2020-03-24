@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>Sistema de chequeo de abastecimiento</title>
+    </head>
+    <body>
+    <h1>Donde encuentro?</h1>
+    <h3>Que necesita?</h3>
+    <div>
+        <form action='/searchData' method="GET">
+            <label for="prod_input">Producto:</label>
+            <input class="prod_input" type="text" required="required" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" id="prod_input" name="prod_input" />
+            <label for="addr_input">Direccion:</label>
+            <input class="addr_input" type="text" required="required" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" id="addr_input" name="addr_input"/>
+            <input class="myButton_input" type="submit" value="Enviar"  id="enviar"/>
+        </form>    
+    </div>
+    <div>
+        <script type="text/javascript">
+            var myRequest = new XMLHttpRequest();
+            myRequest.open('GET','localhost/searchResult');
+            myRequest.onload = function() {
+                console.log(myRequest);
+            };
+        </script>
+    </div>
+    <h4>Reportar disponibilidad</h4>
+    <div>
+        <form action='/submitData' method="GET">
+            <label for="prod_submit">Producto:</label>
+            <input class="prod_submit" type="text" required="required" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" id="prod_submit" name="prod_submit" />
+            <label for="addr_submit">Direccion:</label>
+            <input class="addr_submit" type="text" required="required" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" id="addr_submit" name="addr_submit"/>
+            <label for="avail_input">Disponibilidad:</label>
+            <input class="avail_submit" type="text" required="required" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" id="avail_submit" name="avail_submit"/>
+            <input class="myButton_submit" type="submit" value="Enviar"  id="enviar"/>
+        </form>    
+    </div>
+    </body>
+</html>
+
