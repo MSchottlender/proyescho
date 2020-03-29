@@ -31,6 +31,7 @@ httpServer.post('/report', async (req,res) => {
                                                       placeDescription: req.query.place_description,
                                                       fullAddress: req.query.full_address,
                                                       availability: req.query.availability,
+                                                      price: req.query.price,
                                                       comment: req.query.comment});
     res.status(203).send(report);
 });
