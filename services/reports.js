@@ -26,6 +26,7 @@ exports.createReport = async (params) => {
     const report =  await Report.create({productId: product.id,
                                          addressId: address.id,
                                          availability: params.availability,
+                                         price: params.price,
                                          comment: params.comment});
     return report;
 };
